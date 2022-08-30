@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html ng-app="">
+<head>
+	<title>My StartUp - Contact Us</title>
+	<meta charset="utf-8">
+   	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="Pboot.css">
+  <link rel="stylesheet" type="text/css" href="Pboot2.css">
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="jquery/jsquery" type="text/javascript"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+    <link rel="shortcut icon" type="image/png" href="/images/MS2.jpg" sizes="16x16">
+
+
+
+
+</head>
+<body>
+
+	<header>
+	<nav class="navbar navbar-expand-lg navbar-light bg-primary fixed-top">
+  <a class="navbar-brand" href="#"><b><span style="color: white;"><img src="/images/MS1.jpg" class="img-logo"></span></b></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="Project.html"><span><b><span style="color: white; font-weight: bold;" tabindex="-1">Home</span></b></span> <span class="sr-only">(current)</span></a>
+      </li>
+
+
+      <li class="nav-item">
+        <a class="nav-link" href="ContactUs.html" tabindex="-1" aria-disabled="true"><span style="color: white">Contact Us</span></a>
+      </li>
+
+  </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <a class="btn btn-outline-light my-2 my-sm-0 search" type="submit" href="SignIn.html">Sign In</a>
+    </form>
+  </div>
+</nav>
+</header>
+
+<div class="container-fluid">
+  <img src="/images/contact.jpg" alt="background-img" class="bg-img">
+  <div class="centered">Get In Touch!</div>
+  <div class="contact">
+    <p style="text-align: center;">Don't hesitate to give us a call or send us a contact form message <br><i class="fa fa-map-marker" aria-hidden="true"></i> 22 Industrial Area Phase-9, Mohali &nbsp <i class="fa fa-phone" aria-hidden="true"></i>
+  <a href="#">98xxxxxxxx</a>&nbsp <i class="fa fa-envelope" aria-hidden="true"></i>  <a href="#">abc@gmail.com</a>&nbsp
+  </div>
+  <div class="message">
+    <div class="form">
+    <form name="snform" action"#">
+            <div class="form-group">
+                <div>
+                    <div class="input-box underline">
+                   <label class="titles">Full Name <span style="color: red;">*</span></label><br>
+                  <input type="text" class="form-control" placeholder="First name" name="fname" ng-model="fname" required ng-pattern="/^[a-z ,.'-]+$/i">
+                    <span ng-show="snform.fname.$touched" class="form-class">
+                  <span ng-show="snform.fname.$error.required" style="color: red;">This field is required</span>
+                </span>
+                <span ng-show="snform.fname.$invalid">
+                    <span ng-show="snform.fname.$error.pattern" class="form-class" style="color: red;">Enter correct name.</span>
+                  </span>
+                  <div class="underline"></div>
+                  </div>
+
+                </div>
+                <br>
+                <div>
+                   <label class="titles">Last Name <span style="color: red;">*</span></label> <br>
+                  <input type="text" class="form-control" placeholder="Last name" name="lname" ng-model="lname" required ng-pattern="/^[a-z ,.'-]+$/i">
+                  <span ng-show="snform.lname.$touched" class=" form-class">
+                  <span ng-show="snform.lname.$error.required" style="color: red;">This field is required</span>
+                </span>
+                <span ng-show="snform.lname.$invalid">
+                    <span ng-show="snform.lname.$error.pattern" class="form-class" style="color: red;">Enter correct name.</span>
+                  </span>
+                </div>
+                <br>
+                <div>
+          <label class="titles">Mobile Number <span style="color: red;">*</span></label>
+          <br>
+                <span style="width: 100%"><input type="number" name="Number" placeholder="M. Number" class="form-control" ng-model="Number" minlength="10" maxlength="10" required></span><br>
+                <span ng-show="snform.Number.$touched" class="rounded">
+                  <span ng-show="snform.Number.$error.required" style="color: red;">*This field is Required</span>
+                </span>
+                <span ng-show="snform.Number.$invalid">
+                  <span ng-show="snform.Number.$error.minlength" class="form-class" style="color: red;">10 digits Required</span>
+                  <span ng-show="snform.Number.$error.maxlength" class="form-class" style="color: red;">Invalid Number</span>
+                </span>
+                            </div>
+
+                <div class="form-group">
+              <label for="exampleFormControlTextarea1" class="titles">Your Message: <span style="color: red;">*</span></label>
+              <textarea class="form-control" ng-model="disease" name="disease" ng-pattern="/^[a-z ,.'-]+$/i" id="exampleFormControlTextarea1" rows="3" required></textarea>
+               <span ng-show="snform.disease.$touched" class=" form-class">
+                  <span ng-show="snform.disease.$error.required" style="color: red;">This field is required</span>
+                </span>
+                <span ng-show="snform.disease.$invalid">
+                    <span ng-show="snform.disease.$error.pattern" class="form-class" style="color: red;">Enter correct disease.</span>
+                  </span>
+            </div>
+             <button type="submit" name="Submit" id="submitForm" class="btn btn-primary submit" onsubmit= "return !(snform.disease.$invalid) && !(snform.fname.$invalid) && !(snform.email.$invalid) && !(snform.number.$invalid) && !(snform.mno.$error.pattern) && !(snform.address.$invalid) && !(snform.city.$invalid) && !(snform.inputZip.$invalid)  && !(snform.pass.$invalid) && !(snform.cnpass.$invalid)">Submit</button>
+             <script>
+                  $("#submitForm").click(function() {
+                    if (document.snform.Submit.onsubmit==true) {
+                      alert("The Form has been Submitted.");
+                    }else{
+                      alert("Kindly Fill the Form Completely");
+                   document.snform.submit();
+                   document.snform.reset();
+                 }
+                });
+               </script>
+          </form>
+          </div>
+    </div>
+
+</div>
+
+<footer>
+<div class="container-fluid mt-5 last-hr">
+	<hr>
+	<p class="para5" style="text-align: center;color: #FFFFFF;">Copyright © My StartUp - StartUp HTML Landing Page Template by <u>Navtej Singh</u></p>
+</div>
+</footer>
+
+</body>
+</html>
